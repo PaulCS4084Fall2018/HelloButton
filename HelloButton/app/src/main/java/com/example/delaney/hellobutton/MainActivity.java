@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
         // Code that you add goes after the setContentView call
         mMessageTextView = findViewById(R.id.message_textview);
 
+        // Code to prove that we are able to change the count text
+
         final Button resetButton = findViewById(R.id.reset_button);
         resetButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,8 +55,16 @@ public class MainActivity extends AppCompatActivity {
         mCounter +=1;
         updateView();
     }
-    private void updateView(){
-        mMessageTextView.setText(getString(R.string.message_format,mCounter));
+    private void updateView() {
+        mMessageTextView.setText(getString(R.string.message_format, mCounter));
+
+if(mCounter>10){
+    mMessageTextView.setVisibility(View.INVISIBLE);
+}
+else {
+    mMessageTextView.setVisibility(View.VISIBLE);
+}
 
     }
+
 }
